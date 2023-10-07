@@ -9,11 +9,22 @@
 ## 运行
 1. 打开任务计划程序
 2. 创建任务
-3. 添加触发条件等
-4. 添加执行程序 pythonw.exe "d:\check_smart.py" smartctl c:
+3. 填写计划名称
+![](https://github.com/codeboysky/check-SMART/blob/master/resource/1.png)
+4. 创建触发器,当前示例是每天每8小时检查一次，其中8小时是**手动输入**的
+![](https://github.com/codeboysky/check-SMART/blob/master/resource/2.png)
+5. 创建操作，执行程序选择pythonw可以无黑框运行，参数分别是脚本路径、smartctl路径、待检磁盘
+![](https://github.com/codeboysky/check-SMART/blob/master/resource/3.png)
+6. 修改条件和设置
+![](https://github.com/codeboysky/check-SMART/blob/master/resource/4.png)
+![](https://github.com/codeboysky/check-SMART/blob/master/resource/5.png)
 
-## 参数说明
-| 参数序号 | 说明 | 示例 |
+## 命令说明
+**示例**：pythonw.exe "d:\check_smart.py" smartctl c:
+
+| 序号 | 参数 | 说明 |
 | --- | --- | --- |
-| 1 | smartctl路径 | smartctl.exe | 
-| 2 | 磁盘路径 | linux - /dev/nvme0 <br/> windows - c:  |
+| 1 | pythonw.exe | pythonw 无黑框运行 |
+| 2 | "d:\check_smart.py" | 脚本路径 |
+| 3 | smartctl | smartctl路径,示例中smartctl使用了环境变量，所以不是全路径 |
+| 4 | c: |磁盘路径 <br/> linux - /dev/nvme0 <br/> windows - c:  |
